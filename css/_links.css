@@ -2,7 +2,23 @@
  * This file provides styles for all types of links.
  */
 .dokuwiki .page  h1, .dokuwiki .page  h2 { text-align: center; }
-.dokuwiki { font-family: Garamond serif }
+html, body {
+	background: url(images/background-big.jpg) bottom right fixed !important;
+}
+#dokuwiki__aside > div{
+	background: #fff !important;
+}
+#dokuwiki__footer {
+	display: none;
+}
+
+div.docInfo {
+	color: #fff;
+}
+
+#dokuwiki__header a {
+	color: #fff !important;
+}
 /*____________ links to wiki pages ____________*/
 .dokuwiki a.wikilink1,
 .dokuwiki a.wikilink2,
