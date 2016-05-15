@@ -3,7 +3,7 @@
  */
 .dokuwiki .page  h1, .dokuwiki .page  h2 { text-align: center; }
 html, body {
-	background: url(images/background-big.jpg) bottom right fixed !important;
+	background: url(images/bg3.jpg) bottom right fixed !important;
 }
 #dokuwiki__aside > div{
 	background: #fff !important;
