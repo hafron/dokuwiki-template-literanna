@@ -3,7 +3,7 @@
  */
 .dokuwiki .page  h1, .dokuwiki .page  h2 { text-align: center; }
 html, body {
-	background: url(images/bg3.jpg) bottom right fixed !important;
+	background: url(images/bg7-big.jpg) top left fixed !important;
 }
 #dokuwiki__aside > div{
 	background: #fff !important;
@@ -12,13 +12,13 @@ html, body {
 	display: none;
 }
 
-div.docInfo {
+/*div.docInfo {
 	color: #fff;
 }
 
 #dokuwiki__header a {
 	color: #fff !important;
-}
+}*/
 /*____________ links to wiki pages ____________*/
 .dokuwiki a.wikilink1,
 .dokuwiki a.wikilink2,

@@ -72,32 +72,34 @@ $showSidebar = $hasSidebar && ($ACT=='show');
             <!-- PAGE ACTIONS -->
             <div id="dokuwiki__pagetools">
                 <h3 class="a11y"><?php echo $lang['page_tools']; ?></h3>
-                <div class="tools">
-                    <ul>
-                        <?php
-                            $data = array(
-                                'view'  => 'main',
-                                'items' => array(
-                                    'edit'      => tpl_action('edit',      true, 'li', true, '<span>', '</span>'),
-                                    'revert'    => tpl_action('revert',    true, 'li', true, '<span>', '</span>'),
-                                    'revisions' => tpl_action('revisions', true, 'li', true, '<span>', '</span>'),
-                                    'backlink'  => tpl_action('backlink',  true, 'li', true, '<span>', '</span>'),
-                                    'subscribe' => tpl_action('subscribe', true, 'li', true, '<span>', '</span>'),
-                                    'top'       => tpl_action('top',       true, 'li', true, '<span>', '</span>')
-                                )
-                            );
+                <?php if (isset($INFO['userinfo'])): ?>
+		        <div class="tools">
+		            <ul>
+		                <?php
+		                    $data = array(
+		                        'view'  => 'main',
+		                        'items' => array(
+		                            'edit'      => tpl_action('edit',      true, 'li', true, '<span>', '</span>'),
+		                            'revert'    => tpl_action('revert',    true, 'li', true, '<span>', '</span>'),
+		                            'revisions' => tpl_action('revisions', true, 'li', true, '<span>', '</span>'),
+		                            'backlink'  => tpl_action('backlink',  true, 'li', true, '<span>', '</span>'),
+		                            'subscribe' => tpl_action('subscribe', true, 'li', true, '<span>', '</span>'),
+		                            'top'       => tpl_action('top',       true, 'li', true, '<span>', '</span>')
+		                        )
+		                    );
 
-                            // the page tools can be amended through a custom plugin hook
-                            $evt = new Doku_Event('TEMPLATE_PAGETOOLS_DISPLAY', $data);
-                            if($evt->advise_before()){
-                                foreach($evt->data['items'] as $k => $html) echo $html;
-                            }
-                            $evt->advise_after();
-                            unset($data);
-                            unset($evt);
-                        ?>
-                    </ul>
-                </div>
+		                    // the page tools can be amended through a custom plugin hook
+		                    $evt = new Doku_Event('TEMPLATE_PAGETOOLS_DISPLAY', $data);
+		                    if($evt->advise_before()){
+		                        foreach($evt->data['items'] as $k => $html) echo $html;
+		                    }
+		                    $evt->advise_after();
+		                    unset($data);
+		                    unset($evt);
+		                ?>
+		            </ul>
+		        </div>
+		<?php endif ?>
             </div>
         </div><!-- /wrapper -->
 

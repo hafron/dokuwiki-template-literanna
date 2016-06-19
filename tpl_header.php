@@ -58,22 +58,26 @@ if (!defined('DOKU_INC')) die();
         <?php endif ?>
 
         <!-- SITE TOOLS -->
-        <div id="dokuwiki__sitetools">
-            <h3 class="a11y"><?php echo $lang['site_tools']; ?></h3>
-            <?php tpl_searchform(); ?>
-            <div class="mobileTools">
-                <?php tpl_actiondropdown($lang['tools']); ?>
-            </div>
-            <ul>
-                <?php
-                    tpl_toolsevent('sitetools', array(
-                        tpl_action('recent', true, 'li', true),
-                        tpl_action('media', true, 'li', true),
-                        tpl_action('index', true, 'li', true)
-                    ));
-                ?>
-            </ul>
-        </div>
+
+		<div id="dokuwiki__sitetools">
+		    <h3 class="a11y"><?php echo $lang['site_tools']; ?></h3>
+		    <?php tpl_searchform(); ?>
+		    <div class="mobileTools">
+		        <?php tpl_actiondropdown($lang['tools']); ?>
+		    </div>
+		    <?php if (isset($INFO['userinfo'])): ?>
+			    <ul>
+				<?php
+				    tpl_toolsevent('sitetools', array(
+				        tpl_action('recent', true, 'li', true),
+				        tpl_action('media', true, 'li', true),
+				        tpl_action('index', true, 'li', true)
+				    ));
+				?>
+			    </ul>
+		    <?php endif ?>
+		</div>
+
 
     </div>
 
